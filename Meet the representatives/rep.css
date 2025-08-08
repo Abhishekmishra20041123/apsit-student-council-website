@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    margin: 0;
+    padding: 60px 20px;
+}
+.student-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.person {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.person img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.person h2 {
+    margin: 10px 0;
+}
+.person p {
+    margin: 5px 0;
+}
+.social-links {
+    margin: 10px 0;
+}
+.social-links a {
+    margin: 0 5px; /* Decreased margin for a shorter button */
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 12px; /* Decreased padding for a shorter button */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    background-color: #4CAF50; /* Green background */
+}
+.social-links a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* Centering the button */
+    margin: 10px auto; /* Centering the button */
+}
+button:hover {
+    background-color: #1d5bb5;
+}
+h1 {
+    margin-top: 50px;
+    color: #fff;
+}
+.info-content {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+}

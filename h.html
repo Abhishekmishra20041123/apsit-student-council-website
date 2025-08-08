@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style type="text/css">
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding-top: 60px; /* Adjust based on navbar height */
+}
+
+/* News Ticker */
+.news-container {
+    display: flex;
+    height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 13px;
+}
+.latest-news-label {
+    background-color: #05055c; /* Navy */
+    color: white;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.news-content {
+    flex-grow: 1;
+    background-color: #007bff; /* Bright blue */
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    color: white;
+    overflow: hidden;
+}
+.logo-placeholder {
+    width: 50px;
+    height: 25px;
+    background-color: rgb(248, 248, 8);
+    border-radius: 25px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    display: inline-block;
+    text-align: center;
+}
+
+/* Carousel Customization */
+.carousel-item {
+    height: 400px;
+}
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
+.carousel-caption {
+    background-color: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Council Member Cards */
+.council-card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+.council-card:hover {
+    transform: translateY(-10px);
+}
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Upcoming Events Section */
+.event-card {
+    border-left: 4px solid #007bff;
+    transition: transform 0.3s ease;
+}
+.event-card:hover {
+    transform: translateX(5px);
+}
+.event-date {
+    background-color: #000080;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.event-date .day {
+    font-size: 24px;
+    font-weight: bold;
+}
+.event-date .month {
+    font-size: 14px;
+}
+
+/* Achievements Section */
+.achievement-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.achievement-card:hover {
+    transform: scale(1.03);
+}
+.achievement-icon {
+    font-size: 40px;
+    color: #007bff;
+}
+
+/* Testimonials Section */
+.testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
+.quote-icon {
+    font-size: 30px;
+    color: #007bff;
+    opacity: 0.5;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #212529;
+    color: white;
+    padding: 40px 0 20px;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #3B5998;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.1);
+}
+.social-icon.instagram {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.social-icon.twitter {
+    background-color: #1DA1F2;
+}
+.social-icon.youtube {
+    background-color: #FF0000;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+.back-to-top.visible {
+    opacity: 1;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+    }
+    .event-date {
+        margin-bottom: 15px;
+    }
+}
+</style>
+<body>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top">
+            <div class="nav-container">
+                <a class="navbar-brand" href="#">
+                    <img src="Untitled design.png" alt="APSIT_logo" style="height:45px">
+                </a>
+                
+                <span class="col-sm-6 navbar-text text-white">A. P. Shah Institute of Technology, Mumbai</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Student Council</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="Meet the president\president.html">Message from the President</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Meet the Representatives</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Minutes of Meetings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Letters to Administration</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Announcements</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="#">New Announcements</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Old Announcements</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Events</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="#">Events</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Calendar</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Student's Life</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="#">APSIT Life</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Literary Archive</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Resources</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">FAQs</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Login</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="#">Admin</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="#">Member</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://localhost/MY_PROJECT/oauth2callback"></script>
+</body>
+</html>

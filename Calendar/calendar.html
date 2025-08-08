@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Academic Calendar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 60px 0px;
+            background-color:blue;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 150vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        iframe {
+            width: 80%;
+            height: 800px;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="../apsithomepage.php">
+                    <img src="../Untitled design.png" alt="APSIT_logo" style="height:45px; width:45px;">
+                </a>
+                
+                <span class="col-sm-6 navbar-text text-white">A. P. Shah Institute of Technology, Mumbai</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student Council</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Meet the president/president.html">Message from the President</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meet the representatives/representatives.html">Meet the Representatives</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meeting/meet.php">Minutes of Meetings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Lettter/letters_to_admin.html">Letters to Administration</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Announcements</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Announcements/announcements.php">Announcements</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Events</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Events/events.html">Events</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Calendar/calendar.html">Calendar</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student's Life</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Student life/studentlife.html">APSIT Life</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Achivements/achivements.html">Achivements</a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../resource/resource.php">Resources</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../faq.html">FAQs</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Login</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Admin/admin_login.php">Admin</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Profile/verify.html">Member</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <h2>College Academic Calendar</h2>
+    <object
+    data="viewpdf.php"
+        type="application/pdf"
+        width="80%"
+        height="800px">
+        <p>Unable to display PDF file. <a href="Academic Calendar Second Half 2024.pdf">Download</a> instead.</p>
+    </object>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://localhost/MY_PROJECT/oauth2callback"></script>
+</body>
+</html>

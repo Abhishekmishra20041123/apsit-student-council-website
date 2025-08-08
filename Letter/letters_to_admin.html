@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letters to Administrator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="letters_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+    body {
+        padding-top: 80px !important; /* Ensure content starts below navbar */
+    }
+
+    .navbar {
+        height: 80px; /* Set a fixed height */
+        padding-bottom: 30px;
+    }
+    .navbar-text {
+            font-size: 1.1rem;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-left: -0.5rem;
+        }
+        .navbar-nav .btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+        }
+    .container, main {
+        margin-top: 20px; /* Ensure extra spacing */
+    }
+</style>
+</head>
+<body>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="../apsithomepage.php">
+                    <img src="../Untitled design.png" alt="APSIT_logo" style="height:45px; width:45px;">
+                </a>
+                
+                <span class="col-sm-6 navbar-text text-white">A. P. Shah Institute of Technology, Mumbai</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student Council</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Meet the president/president.html">Message from the President</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meet the representatives/representatives.html">Meet the Representatives</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meeting/meet.php">Minutes of Meetings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Letter/letters_to_admin.html">Letters to Administration</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Announcements</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Announcements/announcements.php">Announcements</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Events</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Events/events.html">Events</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Calendar/calendar.html">Calendar</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student's Life</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Student life/studentlife.html">APSIT Life</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Achivements/achivements.html">Achivements</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../resource/resource.php">Resources</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../faq.html">FAQs</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Login</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Admin/admin_login.php">Admin</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Profile/verify.html">Member</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+     
+    <div class="container">
+        <header>
+            <h1>Letters to Administrator</h1>
+            <div id="user-info">
+                <span>Welcome, <span id="user-name">User</span></span>
+            </div>
+        </header>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="new-letter">
+                    <i class="fas fa-pen-to-square"></i> New Letter
+                </button>
+                <button class="tab-btn" data-tab="letter-history">
+                    <i class="fas fa-history"></i> Letter History
+                </button>
+            </div>
+
+            <div class="tab-content active" id="new-letter">
+                <div class="card">
+                    <h2>Write a Letter to Administrator</h2>
+                    <form id="letter-form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <div class="validation-message" id="subject-validation"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="8" required></textarea>
+                            <div class="validation-message" id="message-validation"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attachment">Attachment (optional):</label>
+                            <div class="file-upload">
+                                <input type="file" id="attachment" name="attachment">
+                                <div class="file-upload-info">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span id="file-name">No file chosen</span>
+                                </div>
+                            </div>
+                            <div class="file-restrictions">
+                                Allowed file types: PDF, DOC, DOCX, JPG, PNG (Max size: 5MB)
+                            </div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Letter
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fas fa-undo"></i> Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tab-content" id="letter-history">
+                <div class="card">
+                    <h2>Your Letter History</h2>
+                    <div class="letter-filters">
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Search by subject...">
+                            <button id="search-btn" class="btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="filter-container">
+                            <select id="status-filter">
+                                <option value="all">All Status</option>
+                                <option value="pending">Pending</option>
+                                <option value="read">Read</option>
+                                <option value="replied">Replied</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="letters-container">
+                        <div class="loading">Loading your letters...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="letter-detail-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-subject"></h3>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="letter-meta">
+                        <div class="letter-date">
+                            <i class="fas fa-calendar"></i> <span id="modal-date"></span>
+                        </div>
+                        <div class="letter-status">
+                            <i class="fas fa-info-circle"></i> Status: <span id="modal-status"></span>
+                        </div>
+                    </div>
+                    <div class="letter-content">
+                        <h4>Message:</h4>
+                        <p id="modal-message"></p>
+                    </div>
+                    <div id="modal-attachment-container" class="letter-attachment">
+                        <h4>Attachment:</h4>
+                        <a id="modal-attachment" href="#" target="_blank">
+                            <i class="fas fa-paperclip"></i> <span id="modal-attachment-name"></span>
+                        </a>
+                    </div>
+                    <div id="modal-reply-container" class="letter-reply">
+                        <h4>Admin Reply:</h4>
+                        <p id="modal-reply"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+
+    <script src="letters_script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://localhost/MY_PROJECT/oauth2callback"></script>
+</body>
+</html>
+

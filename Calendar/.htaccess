@@ -1,0 +1,4 @@
+<FilesMatch "\.(pdf)$">
+    ForceType application/pdf
+    Header set Content-Disposition inline
+</FilesMatch>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Events</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=1">
+    <style>
+       .navbar{
+        background-color: #151b21;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: -1rem;
+        
+    }
+    
+    .navbar-text {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-left: -8rem;
+            margin-right: 4rem;
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        .navbar-dropdown{
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        .navbar-button{
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            margin-left:1rem;
+        }
+        .btn-dark.dropdown-toggle{
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            margin-left:0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top navbar-custom" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <div class="container">
+                <a class="navbar-brand" href="../apsithomepage.php">
+                    <img src="../Untitled design.png" alt="APSIT_logo" style="height:45px; width:45px;">
+                </a>
+                
+                <span class="col-sm-6 navbar-text text-white">A. P. Shah Institute of Technology, Mumbai</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student Council</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Meet the president/president.html">Message from the President</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meet the representatives/representatives.html">Meet the Representatives</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meeting/meet.php">Minutes of Meetings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Letter/letters_to_admin.html">Letters to Administration</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Announcements</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Announcements/announcements.php">Announcements</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Events</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Events/events.html">Events</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Calendar/calendar.html">Calendar</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student's Life</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Student life/studentlife.html">APSIT Life</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Achivements/achivements.html">Achivements</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../resource/resource.php">Resources</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../faq.html">FAQs</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Login</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Admin/admin_login.php">Admin</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Profile/verify.html">Member</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+ 
+    <h1>College Events</h1>
+    
+    
+    <div class="events-container" id="eventsContainer"></div>
+
+    <!-- Add Event Form Modal -->
+    <div id="eventFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEventForm()">&times;</span>
+            <h2>Add New Event</h2>
+            <form id="eventForm" onsubmit="saveEvent(event)">
+                <input type="text" id="event_name" name="event_name" placeholder="Event Name" required>
+                <label>Upload Event Image:</label>
+                <input type="file" id="event_image" name="event_image" accept="image/*" required>
+                <input type="date" id="start_date" name="start_date" required>
+                <input type="date" id="end_date" name="end_date" required>
+                <textarea id="event_description" name="event_description" placeholder="Event Description" required></textarea>
+                <label>Upload PDF (Optional):</label>
+                <input type="file" id="pdf_file" name="pdf_file" accept="application/pdf">
+                <button type="submit" class="save-btn">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Details Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalEventName"></h2>
+            <p><b>Start Date:</b> <span id="modalStartDate"></span> | <b>End Date:</b> <span id="modalEndDate"></span></p>
+            <p id="modalDescription"></p>
+            <p id="modalPdf"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://localhost/MY_PROJECT/oauth2callback"></script>
+
+</body>
+</html>

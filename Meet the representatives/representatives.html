@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Council 2024-25</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="rep.css?v=1">
+</head>
+<style>
+    .navbar{
+        background-color: #343a40;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: -2.5rem;
+        
+    }
+    .navbar-text {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-left: -0.6rem;
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        .navbar-dropdown{
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        .navbar-button{
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        .btn-dark.dropdown-toggle{
+            font-family: 'Poppins', sans-serif;
+        }
+</style>
+<body>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="../apsithomepage.php">
+                    <img src="../Untitled design.png" alt="APSIT_logo" style="height:45px; width:45px;">
+                </a>
+                
+                <span class="col-sm-6 navbar-text text-white">A. P. Shah Institute of Technology, Mumbai</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student Council</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Meet the president/president.html">Message from the President</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meet the representatives/representatives.html">Meet the Representatives</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meeting/meet.php">Minutes of Meetings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Letter/letters_to_admin.html">Letters to Administration</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Announcements</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Announcements/announcements.php">Announcements</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Events</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Events/events.html">Events</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Calendar/calendar.html">Calendar</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student's Life</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Student life/studentlife.html">APSIT Life</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Achivements/achivements.html">Achivements</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../resource/resource.php">Resources</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../faq.html">FAQs</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Login</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Admin/admin_login.php">Admin</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Profile/verify.html">Member</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+ 
+    <div class="student-container">
+        <h1>Student Council 2024-25</h1>
+        
+        <!-- President -->
+        <div class="person">
+            <img src="razzaq.jpeg" alt="Razzaq Shikalgar">
+            <h2>Razzaq Shikalgar</h2>
+            <p><strong>Role:</strong> President</p>
+            <p><strong>Department:</strong> BE COMPS</p>
+            <p><strong>Phone:</strong> <span class="phone">9167310023</span></p>
+            <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+            <div class="info-content">
+                <p>Razzaq is dedicated to enhancing student engagement and fostering a sense of community.</p>
+                <p><strong>Email:</strong> razzaq@example.com</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- General Secretary -->
+        <div class="person">
+            <img src="ansh.jpeg" alt="Ansh Chavan">
+            <h2>Ansh Chavan</h2>
+            <p><strong>Role:</strong> General Secretary</p>
+            <p><strong>Department:</strong> TE IT</p>
+            <p><strong>Phone:</strong> <span class="phone">8928699971</span></p>
+            <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+            <div class="info-content">
+                <p>Ansh is instrumental in ensuring smooth communication between students and faculty.</p>
+                <p><strong>Email:</strong> ansh@example.com</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+                </div>
+               
+            </div>
+        </div>
+
+        <!-- Additional council members would go here, following the same structure -->
+
+        <!-- Joint Cultural Secretaries -->
+        <h1>Joint Cultural Secretaries</h1>
+
+        <div class="person">
+            <img src="razzaq.jpeg" alt="Photo of Harsh Borge">
+            <h2>Harsh Borge</h2>
+            <p><strong>Role:</strong> Joint Cultural Secretary</p>
+            <p><strong>Department:</strong> TE COMPS</p>
+            <p><strong>Phone:</strong> <span class="phone">9594555364</span></p>
+            <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+            <div class="info-content">
+                <p>Harsh works diligently to enhance the cultural fabric of our college, organizing events that celebrate diversity.</p>
+                <p><strong>Email:</strong> harsh@example.com</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="person">
+            <img src="path_to_image" alt="Photo of Yogini Yadav">
+            <h2>Yogini Yadav</h2>
+            <p><strong>Role:</strong> Joint Cultural Secretary</p>
+            <p><strong>Department:</strong> SE COMPS</p>
+            <p><strong>Phone:</strong> <span class="phone">8097058644</span></p>
+            <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+            <div class="info-content">
+                <p>Yogini is an active participant in various cultural events, bringing creativity and enthusiasm to all activities.</p>
+                <p><strong>Email:</strong> yogini@example.com</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="person">
+            <img src="ansh.jpeg" alt="Photo of Ankit Chauhan">
+            <h2>Ankit Chauhan</h2>
+            <p><strong>Role:</strong> Joint Cultural Secretary</p>
+            <p><strong>Department:</strong> TE CIVIL</p>
+            <p><strong>Phone:</strong> <span class="phone">9920396636</span></p>
+            <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+            <div class="info-content">
+                <p>Ankit has a flair for the arts and is dedicated to bringing artistic talent to the forefront in college.</p>
+                <p><strong>Email:</strong> ankit@example.com</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Joint Sports Secretaries -->
+<h1>Joint Sports Secretaries</h1>
+
+<div class="person">
+    <img src="razzaq.jpeg" alt="Photo of Rohan Kumar">
+    <h2>Rohan Kumar</h2>
+    <p><strong>Role:</strong> Joint Sports Secretary</p>
+    <p><strong>Department:</strong> TE MECH</p>
+    <p><strong>Phone:</strong> <span class="phone">9876543210</span></p>
+    <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+    <div class="info-content">
+        <p>Rohan is passionate about promoting sports and organizing various events to enhance sports culture.</p>
+        <p><strong>Email:</strong> rohan@example.com</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+        </div>
+        
+    </div>
+</div>
+
+<div class="person">
+    <img src="path_to_image" alt="Photo of Sneha Gupta">
+    <h2>Sneha Gupta</h2>
+    <p><strong>Role:</strong> Joint Sports Secretary</p>
+    <p><strong>Department:</strong> SE ECE</p>
+    <p><strong>Phone:</strong> <span class="phone">9876543211</span></p>
+    <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+    <div class="info-content">
+        <p>Sneha excels in athletics and is committed to increasing student participation in sports.</p>
+        <p><strong>Email:</strong> sneha@example.com</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+        </div>
+       
+    </div>
+</div>
+
+<div class="person">
+    <img src="ansh.jpeg" alt="Photo of Ravi Shankar">
+    <h2>Ravi Shankar</h2>
+    <p><strong>Role:</strong> Joint Sports Secretary</p>
+    <p><strong>Department:</strong> TE CIVIL</p>
+    <p><strong>Phone:</strong> <span class="phone">9876543212</span></p>
+    <button class="more-info" onclick="toggleInfo(this)">More Information</button>
+    <div class="info-content">
+        <p>Ravi is an avid sports enthusiast who organizes various competitions and promotes teamwork.</p>
+        <p><strong>Email:</strong> ravi@example.com</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a>
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+        </div>
+        
+    </div>
+</div>
+
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://localhost/MY_PROJECT/oauth2callback"></script>
+
+    <script>
+        function toggleInfo(button) {
+            const infoContent = button.nextElementSibling;
+            if (infoContent.style.display === "none" || infoContent.style.display === "") {
+                infoContent.style.display = "block";
+                button.textContent = "Less Information ▲";
+            } else {
+                infoContent.style.display = "none";
+                button.textContent = "More Information ▼";
+            }
+        }
+    </script>
+</body>
+</html>

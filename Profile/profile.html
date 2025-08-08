@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - APSIT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profile_style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-img">
+                            <div class="profile-img-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="profile-name" id="profile-name">
+                            <h3>Loading...</h3>
+                            <p class="text-muted">Student</p>
+                        </div>
+                        <div class="profile-nav">
+                            <ul>
+                                <li class="active" data-tab="account">
+                                    <i class="fas fa-user-circle"></i> Account Settings
+                                </li>
+                                <li data-tab="security">
+                                    <i class="fas fa-lock"></i> Security
+                                </li>
+                                <!-- <li data-tab="notifications">
+                                    <i class="fas fa-bell"></i> Notifications
+                                </li> -->
+                                <li>
+                                    <a href="../apsithomepage.php">
+                                        <i class="fas fa-home"></i> Back to Home
+                                    </a>
+                                </li>
+                                <li id="logout-btn">
+                                    <a href="../login.html">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="content-card">
+                    <!-- Account Settings Tab -->
+                    <div class="tab-content active" id="account">
+                        <div class="content-header">
+                            <h2>Account Settings</h2>
+                            <p>Manage your account information</p>
+                        </div>
+                        <div class="content-body">
+                            <form id="account-form">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your full name">
+                                    <div class="invalid-feedback" id="name-validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your email address">
+                                    <div class="invalid-feedback" id="email-validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select class="form-control" id="department" name="department">
+                                        <option value="">Select Department</option>
+                                        <option value="Computer Engineering">Computer Engineering</option>
+                                        <option value="Information Technology">Information Technology</option>
+                                        <option value="Electronics Engineering">Electronics Engineering</option>
+                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                        <option value="Civil Engineering">Civil Engineering</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="year">Year</label>
+                                    <select class="form-control" id="year" name="year">
+                                        <option value="">Select Year</option>
+                                        <option value="First Year">First Year</option>
+                                        <option value="Second Year">Second Year</option>
+                                        <option value="Third Year">Third Year</option>
+                                        <option value="Final Year">Final Year</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <textarea class="form-control" id="bio" name="bio" rows="3" placeholder="Tell us about yourself"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Tab -->
+                    <div class="tab-content" id="notifications">
+                        <div class="content-header">
+                            <h2>Notifications</h2>
+                            <p>View your help desk responses and notifications</p>
+                        </div>
+                        <div class="content-body">
+                            <div class="notification-list" id="notification-list">
+                                <!-- Notifications will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Tab -->
+                    <div class="tab-content" id="security">
+                        <div class="content-header">
+                            <h2>Security</h2>
+                            <p>Manage your password and security settings</p>
+                        </div>
+                        <div class="content-body">
+                            <form id="password-form">
+                                <div class="form-group">
+                                    <label for="current-password">Current Password</label>
+                                    <input type="password" class="form-control" id="current-password" name="current_password" placeholder="Enter your current password">
+                                    <div class="invalid-feedback" id="current-password-validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <input type="password" class="form-control" id="new-password" name="new_password" placeholder="Enter your new password">
+                                    <div class="invalid-feedback" id="new-password-validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm New Password</label>
+                                    <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Confirm your new password">
+                                    <div class="invalid-feedback" id="confirm-password-validation"></div>
+                                </div>
+                                <div class="password-strength">
+                                    <p>Password Strength: <span id="password-strength-text">None</span></p>
+                                    <div class="progress">
+                                        <div id="password-strength-meter" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <ul class="password-requirements">
+                                        <li id="length-check"><i class="fas fa-times-circle"></i> At least 8 characters</li>
+                                        <li id="uppercase-check"><i class="fas fa-times-circle"></i> At least one uppercase letter</li>
+                                        <li id="lowercase-check"><i class="fas fa-times-circle"></i> At least one lowercase letter</li>
+                                        <li id="number-check"><i class="fas fa-times-circle"></i> At least one number</li>
+                                        <li id="special-check"><i class="fas fa-times-circle"></i> At least one special character</li>
+                                    </ul>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="profile_script.js"></script>
+</body>
+</html>
+

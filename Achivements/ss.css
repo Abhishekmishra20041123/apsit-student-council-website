@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f9d423, #ff4e50);
+    margin: 0;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #001f3f; /* Navy blue background */
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: #444 4px solid;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Increased font size */
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Stronger shadow effect */
+    animation: header-animation 2s ease-in-out infinite; /* Infinite animation */
+}
+
+@keyframes header-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.Acontainer {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* New transition for cards */
+    cursor: pointer;
+    width: 320px;
+    text-align: left;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.1) rotate(3deg); /* Scale and rotate on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Image transition */
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05); /* Slightly scale image on hover */
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content .tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.tag-dept {
+    background-color: #00796b;
+}
+
+.tag-special {
+    background-color: #ff6b6b;
+}
+
+.card-content h2 {
+    margin: 15px 0 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card-footer {
+    padding: 20px;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.footer-info {
+    text-align: center; /* Center the footer text */
+    width: 100%; /* Full width for centered alignment */
+}
+
+.footer-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.footer-info small {
+    color: #777;
+    font-size: 0.9em; /* Smaller font for year */
+}

@@ -1,0 +1,179 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Prevent navbar overlap */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar Customization */
+.navbar-custom {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* President Card */
+.president {
+    background: linear-gradient(135deg, #001f3f, #003366); /* Navy blue gradient */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 700px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.5s ease-in-out;
+    border: 3px solid #ff7e5f;
+    margin: 20px;
+}
+
+.president:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile Image */
+.president img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 5px solid #007BFF;
+}
+
+.president img:hover {
+    transform: scale(1.1);
+    border-color: #0056b3;
+}
+
+/* Heading Styles */
+h1 {
+    margin-top: 15px;
+    font-size: 36px;
+    color: white; /* Fallback color */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: white; /* Fallback color */
+    animation: fadeIn 0.5s ease-in-out;
+    background: linear-gradient(90deg, #85e3ff, #ff77e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Contact Info */
+.contact-info-president {
+    font-size: 18px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #ff77e6, #ff7e5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+}
+
+.contact-info-president a {
+    color: #ff7e5f;
+    font-weight: bold;
+}
+
+/* Social Media Buttons */
+.social-media-president {
+    margin-top: 20px;
+}
+
+.social-media-president h2 {
+    font-size: 24px;
+    color: white;
+}
+
+.social-media-president a {
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* Social Media Button Styling */
+.social-media-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.social-media-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.social-media-button img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .president {
+        max-width: 90%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .social-media-button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}

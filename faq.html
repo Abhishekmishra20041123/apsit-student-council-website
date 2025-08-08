@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Council Q&A</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #22293b, #2e3a4e);
+      overflow-x: hidden;
+      position: relative;
+      color: white;
+    }
+
+    .background-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+      backdrop-filter: blur(5px);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-20px) translateX(10px);
+      }
+    }
+
+    .shape:nth-child(1) {
+      width: 150px;
+      height: 150px;
+      top: 20%;
+      left: 10%;
+    }
+
+    .shape:nth-child(2) {
+      width: 100px;
+      height: 100px;
+      top: 30%;
+      left: 75%;
+    }
+
+    .shape:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      bottom: 20%;
+      right: 15%;
+    }
+
+    .fcontainer {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      animation: fadeIn 1s ease;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      color: white;
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 20px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .question {
+      font-size: 22px;
+      font-weight: bold;
+      color: #66b2ff;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    .question:hover {
+      color: #409fff;
+    }
+
+    .answer {
+      display: none;
+      font-size: 16px;
+      color: #e0e0e0;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .toggle-icon {
+      font-size: 22px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .add-question-form {
+      margin-top: 50px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .add-question-form h3 {
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 16px;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      backdrop-filter: blur(5px);
+    }
+
+    input:focus, textarea:focus {
+      border-color: #66b2ff;
+      outline: none;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      background-color: #66b2ff;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #409fff;
+      box-shadow: 0 6px 15px rgba(64, 159, 255, 0.3);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sticky-top">
+    <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="apsithomepage.php">
+                <img src="Untitled design.png" alt="APSIT_logo" style="height:45px; width:45px;">
+            </a>
+            
+            <span class="col-sm-6 navbar-text text-white">A. P. Shah Institute of Technology, Mumbai</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsenavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student Council</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item text-info" href="Meet the president/president.html">Message from the President</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="Meet the representatives\representatives.html">Meet the Representatives</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="Meeting/meet.php">Minutes of Meetings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="Letter/letters_to_admin.html">Letters to Administration</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Announcements</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item text-info" href="Announcements/announcements.php">Announcements</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Events</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item text-info" href="Events\events.html">Events</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="Calendar\calendar.html">Calendar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student's Life</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item text-info" href="Student life\studentlife.html">APSIT Life</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="Achivements\achivements.html">Achivements</a>
+                                <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="resource/resource.php">Resources</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="faq.html">FAQs</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Login</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item text-info" href="Admin/admin_login.php">Admin</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-info" href="Profile/verify.html">Member</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+  <div class="background-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <div class="fcontainer">
+    <h1>Student Council Q&A</h1>
+    <div class="faq" id="faq-container">
+      <div class="faq-item">
+        <p class="question">What is the purpose of the student council? <span class="toggle-icon">+</span></p>
+        <p class="answer">The student council serves as the voice of the student body, working to improve the school community and organize events that benefit students.</p>
+      </div>
+      <div class="faq-item">
+        <p class="question">How can I join the student council? <span class="toggle-icon">+</span></p>
+        <p class="answer">You can join the student council by participating in elections held at the beginning of the school year. Look out for announcements and submit your nomination form.</p>
+      </div>
+    </div>
+
+    <div class="add-question-form">
+      <h3>Add Your Own Question</h3>
+      <div class="input-group">
+        <label for="new-question">Question</label>
+        <input type="text" id="new-question" placeholder="Enter your question">
+      </div>
+      <div class="input-group">
+        <label for="new-answer">Answer</label>
+        <textarea id="new-answer" rows="3" placeholder="Enter the answer"></textarea>
+      </div>
+      <button class="submit-btn" onclick="addNewFAQ()">Add Question</button>
+    </div>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+
+    questions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const answer = question.nextElementSibling;
+        const isVisible = answer.style.display === 'block';
+
+        document.querySelectorAll('.answer').forEach(ans => ans.style.display = 'none');
+        document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+
+        if (!isVisible) {
+          answer.style.display = 'block';
+          faqItem.classList.add('active');
+        } else {
+          answer.style.display = 'none';
+        }
+      });
+    });
+
+    function addNewFAQ() {
+      const questionText = document.getElementById('new-question').value.trim();
+      const answerText = document.getElementById('new-answer').value.trim();
+
+      if (questionText === '' || answerText === '') {
+        alert('Please fill in both fields');
+        return;
+      }
+
+      const faqContainer = document.getElementById('faq-container');
+      const newFaqItem = document.createElement('div');
+      newFaqItem.classList.add('faq-item');
+
+      const newQuestion = document.createElement('p');
+      newQuestion.classList.add('question');
+      newQuestion.innerHTML = `${questionText} <span class="toggle-icon">+</span>`;
+
+      const newAnswer = document.createElement('p');
+      newAnswer.classList.add('answer');
+      newAnswer.innerHTML = `${answerText}`;
+
+      newQuestion.addEventListener('click', () => {
+        const isVisible = newAnswer.style.display === 'block';
+
+        document.querySelectorAll('.answer').forEach(ans => ans.style.display = 'none');
+        document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+
+        if (!isVisible) {
+          newAnswer.style.display = 'block';
+          newFaqItem.classList.add('active');
+        } else {
+          newAnswer.style.display = 'none';
+        }
+      });
+
+      newFaqItem.appendChild(newQuestion);
+      newFaqItem.appendChild(newAnswer);
+      faqContainer.appendChild(newFaqItem);
+
+      document.getElementById('new-question').value = '';
+      document.getElementById('new-answer').value = '';
+      document.getElementById('new-question').focus();
+    }
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://localhost/MY_PROJECT/oauth2callback"></script>
+</body>
+</html>

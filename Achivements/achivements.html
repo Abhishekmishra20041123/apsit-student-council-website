@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="ss.css?v=2">
+    <title>Student Achievements</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="../apsithomepage.php">
+                    <img src="../Untitled design.png" alt="APSIT_logo" style="height:45px; width:45px;">
+                </a>
+                
+                <span class="col-sm-6 navbar-text text-white">A. P. Shah Institute of Technology, Mumbai</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student Council</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Meet the president/president.html">Message from the President</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meet the representatives/representatives.html">Meet the Representatives</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Meeting/meet.php">Minutes of Meetings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Letter/letters_to_admin.html">Letters to Administration</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Announcements</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Announcements/announcements.php">Announcements</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Events</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Events/events.html">Events</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Calendar/calendar.html">Calendar</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Student's Life</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Student life/studentlife.html">APSIT Life</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Achivements/achivements.html">Achivements</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../resource/resource.php">Resources</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../faq.html">FAQs</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Login</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-info" href="../Admin/admin_login.php">Admin</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-info" href="../Profile/verify.html">Member</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+     
+    <header>
+        <h1 style="margin-top: 70px;">Student Achievements</h1>
+    </header>
+    <div class="Acontainer">
+        <div class="cards">
+            <div class="card" onclick="openPdf('Department Achievements.pdf')">
+                <div class="card-image">
+                    <img src="department.jpeg" alt="Department Achievements">
+                </div>
+                <div class="card-content">
+                    <span class="tag tag-dept">Department</span>
+                    <h2>Department Achievements</h2>
+                </div>
+                <div class="card-footer">
+                    <div class="footer-info">
+                        <h3>A.P shah institute of technology</h3>
+                        <small>2024</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card" onclick="openPdf('Special Achievements.pdf')">
+                <div class="card-image">
+                    <img src="special.jpeg" alt="Special Achievements">
+                </div>
+                <div class="card-content">
+                    <span class="tag tag-special">Special</span>
+                    <h2>Special Achievements</h2>
+                </div>
+                <div class="card-footer">
+                    <div class="footer-info">
+                        <h3>A.P shah institute of technology</h3>
+                        <small>2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPdf(pdfUrl) {
+            window.open(pdfUrl, '_blank');
+        }
+        openPdf('pdfs/Department Achievements.pdf');
+openPdf('pdfs/Special Achievements.pdf');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://localhost/MY_PROJECT/oauth2callback"></script>
+</body>
+</html>

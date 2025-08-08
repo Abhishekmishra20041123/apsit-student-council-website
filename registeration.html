@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.P Shah Institute of Technology - Registration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h2>Register</h2>
+    
+    <form action="register.php" method="POST">
+      <div class="input-field">
+        <input type="text" name="name" required>
+        <label>Enter your name</label>
+        <i class="fas fa-user icon"></i>
+      </div>
+      
+      <div class="input-field">
+        <input type="email" name="email" required>
+        <label>Enter your email</label>
+        <i class="fas fa-envelope icon"></i>
+      </div>
+      
+      <div class="input-field">
+        <input type="password" name="password" required>
+        <label>Enter your password</label>
+        <i class="fas fa-lock icon"></i>
+      </div>
+      
+      <button type="submit">Register <i class="fas fa-user-plus"></i></button>
+      
+      <div class="login">
+        <p>Already have an account? <a href="login.html">Sign In</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
